@@ -1,0 +1,35 @@
+﻿@* @{
+    Layout = "_Layout";
+}
+ *@
+@* @{
+    if (User.IsInRole("Customer"))
+    {
+        Layout = "/Views/Shared/_CustomersLayout.cshtml";
+    }
+  else if (User.IsInRole("Admin"))
+    {
+        Layout = "/Views/Shared/_AdminLayout.cshtml";
+    }
+    else
+    {
+        // Default layout
+        Layout = "/Views/Shared/_Layout.cshtml";
+    }
+} *@
+@{
+    if (User.IsInRole("Customer"))
+    {
+        Layout = "/Views/Shared/_CustomerLayout.cshtml";
+    }
+    else if (User.IsInRole("Admin"))
+    {
+        Layout = "/Views/Shared/_AdminLayout.cshtml";
+    }
+    else
+    {
+        // Default layout
+      //  Layout = "/Views/Shared/_Layout.cshtml";
+        Layout = "/Views/Shared/_CustomerLayout.cshtml";
+    }
+}
